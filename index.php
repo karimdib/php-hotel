@@ -1,5 +1,6 @@
 <?php
 
+
 $hotels = [
 
     [
@@ -40,19 +41,6 @@ $hotels = [
 
 ];
 
-var_dump($hotels);
-
-
-foreach($hotels as $hotel){
-    ?>
-    <p><?php echo $hotel['name'] ?></p>
-    <p><?php echo $hotel['description'] ?></p>
-    <p><?php echo $hotel['parking'] ?></p>
-    <p><?php echo $hotel['vote'] ?></p>
-    <p><?php echo $hotel['distance_to_center'] ?> metri</p>
-    <?php
-};
-
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +51,53 @@ foreach($hotels as $hotel){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Hotels</title>
 </head>
-<body>
-    <div class="text-danger">
-        <p class="text-primary">ciao come stai </p>
-    </div>
+<body class="container-md p-5">
+
+
+<?php 
+foreach($hotels as $hotel) {}
+ ?>
+
+<table class="table ">
+    <thead>
+        <tr>
+            <?php 
+               
+               foreach($hotel as $key =>$value){
+                    ?>
+                    <th><?php echo $key ?></th>
+                    <?php
+               };            
+                ?>
+        </tr>
+    </thead>
+    <tbody>
+   <?php
+    foreach($hotels as $hotel){
+    ?>
+      <tr>
+        <td><?php echo $hotel['name'] ?></td>
+        <td><?php echo $hotel['description'] ?></td>
+        <td><?php echo $hotel['parking'] ?></td>
+        <td><?php echo $hotel['vote'] ?></td>
+        <td><?php echo $hotel['distance_to_center'] ?> metri</td>
+      </tr>
+    <?php
+};
+
+?>
+    </tbody>
+</table>
 
 </body>
 </html>
+
+
+<div class="d-none">
+      <p><?php echo $hotel['name'] ?></p>
+      <p><?php echo $hotel['description'] ?></p>
+      <p><?php echo $hotel['parking'] ?></p>
+      <p><?php echo $hotel['vote'] ?></p>
+      <p><?php echo $hotel['distance_to_center'] ?> metri</p>
+</div>
+
